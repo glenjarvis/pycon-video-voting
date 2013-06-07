@@ -31,3 +31,4 @@ class Talk(db.Model):
     url = db.LinkProperty()
     video = db.LinkProperty()
     score = db.IntegerProperty(default=0)
+    watched = db.BooleanProperty(default=False, indexed=True)

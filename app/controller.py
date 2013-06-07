@@ -112,7 +112,8 @@ class VoteBoardPage(webapp2.RequestHandler):
         talk_q.order('-score')
 
         template_values = {
-            'current_event': event_key,
+            'current_event': this_event,
+            'redirect_link':  "/vote_board/%s" % event_key,
             'talks': talk_q
         }
 
@@ -128,12 +129,10 @@ class VotePage(webapp2.RequestHandler):
         """Receive vote request and event to redirect to"""
 
         talk = Talk.get(talk_key)
-        redirect_link = "/vote_board/%s" % self.request.get('current_event')
-
         talk.score = talk.score + 1
         talk.put()
 
-        self.redirect(redirect_link)
+        self.redirect(self.request.get('redirect_link'))
 
 
 # This non-constant name is okay; pylint: disable=C0103

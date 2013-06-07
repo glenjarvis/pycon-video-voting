@@ -7,6 +7,8 @@
    <link type="text/css" rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
+    <h1>{{ current_event.title }}</h1>
+
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-2648941248992936";
 /* voteboard */
@@ -18,6 +20,7 @@ google_ad_height = 90;
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
+
     <table>
       <tr>
         <th>
@@ -46,12 +49,13 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
         </th>
       </tr>
 
+
     {% for talk in talks %}
       <tr>
         <td>
           <form action="/vote/{{ talk.key() }}" method="post">
             <input type="submit" value="+1"/>
-            <input type="hidden" name="current_event" value="{{ current_event }}" />
+            <input type="hidden" name="redirect_link" value="{{ redirect_link }}" />
           </form>
         </td>
         <td>
