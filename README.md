@@ -2,7 +2,7 @@ Google App Engine
 =================
 
 post-pycon-video-voting
-=======================
+-----------------------
 
 Every year the Silicon Valley Python Interest Group meets and watches PostPyCon
 videos.

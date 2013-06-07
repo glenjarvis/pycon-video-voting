@@ -9,10 +9,13 @@ Main entry point is controller.application
 (where controller is this file).
 """
 
+import datetime
 import os
 
 import jinja2
 import webapp2
+
+from app.model import Event
 
 TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), 'templates')
 
@@ -29,7 +32,13 @@ class MainPage(webapp2.RequestHandler):
 
         """Initial page load (index.html) for main controller"""
 
-        template_values = {}
+        event_q = Event.all()
+        event_q.filter("date > ", datetime.date.today())
+
+        template_values = {
+            'events': event_q,
+        }
+
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.write(template.render(template_values))
 
