@@ -47,6 +47,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
         <th>
           Video
         </th>
+        <th>
+          Viewed?
+        </th>
       </tr>
 
 
@@ -87,6 +90,12 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
               go to video
             </a>
           {% endif %}
+        </td>
+        <td>
+          <form action="/viewed/{{ talk.key() }}" method="post">
+            <input type="submit" value="mark viewed"/>
+            <input type="hidden" name="redirect_link" value="{{ redirect_link }}" />
+          </form>
         </td>
       </tr>
     {% endfor %}

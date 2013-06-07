@@ -109,6 +109,7 @@ class VoteBoardPage(webapp2.RequestHandler):
         this_event = Event.get(event_key)
         talk_q = Talk.all()
         talk_q.filter("event = ", this_event)
+        talk_q.filter("viewed =", False)
         talk_q.order('-score')
 
         template_values = {
@@ -134,11 +135,25 @@ class VotePage(webapp2.RequestHandler):
 
         self.redirect(self.request.get('redirect_link'))
 
+class ViewedPage(webapp2.RequestHandler):
+
+    """Page to process 'video already viewed' requests"""
+
+    def post(self, talk_key):
+        """Receive 'viewed' request and event to redirect to"""
+
+        talk = Talk.get(talk_key)
+        talk.viewed = True
+        talk.put()
+
+        self.redirect(self.request.get('redirect_link'))
+
 
 # This non-constant name is okay; pylint: disable=C0103
 application = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/vote_board/(.*)', VoteBoardPage),
     ('/vote/(.*)', VotePage),
+    ('/viewed/(.*)', ViewedPage),
     ('/admin/load', DataLoadPage),
 ], debug=True)

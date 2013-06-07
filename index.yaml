@@ -15,8 +15,20 @@ indexes:
   - name: locked
   - name: date
 
+- kind: Event
+  properties:
+  - name: viewed
+  - name: date
+
 - kind: Talk
   properties:
   - name: event
+  - name: score
+    direction: desc
+
+- kind: Talk
+  properties:
+  - name: event
+  - name: viewed
   - name: score
     direction: desc
