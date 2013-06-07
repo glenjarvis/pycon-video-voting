@@ -39,7 +39,10 @@
     {% for talk in talks %}
       <tr>
         <td>
-          +1
+          <form action="/vote/{{ talk.key() }}" method="post">
+            <input type="submit" value="+1"/>
+            <input type="hidden" name="current_event" value="{{ current_event }}" />
+          </form>
         </td>
         <td>
           {{ talk.score }}
