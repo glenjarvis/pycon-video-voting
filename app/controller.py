@@ -100,8 +100,27 @@ class DataLoadPage(webapp2.RequestHandler):
         self.response.out.write("</body></html>")
 
 
+class VoteBoardPage(webapp2.RequestHandler):
+    """Vote board page for a particular event"""
+
+    def get(self, event_id):
+        """Display vote board for event given by event_id"""
+
+        this_event = Event.get(event_id)
+        talk_q = Talk.all()
+        talk_q.filter("event = ", this_event)
+
+        template_values = {
+            'talks': talk_q,
+        }
+
+        template = JINJA_ENVIRONMENT.get_template('vote_board.html')
+        self.response.write(template.render(template_values))
+
+
 # This non-constant name is okay; pylint: disable=C0103
 application = webapp2.WSGIApplication([
     ('/', MainPage),
+    ('/vote_board/(.*)', VoteBoardPage),
     ('/admin/load', DataLoadPage),
 ], debug=True)

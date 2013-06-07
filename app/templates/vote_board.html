@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+   <title>Vote Board</title>
+   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+   <link type="text/css" rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <table>
+
+      <tr>
+        <th>
+          Vote up
+        </th>
+        <th>
+          Current Score
+        </th>
+        <th>
+          Level
+        </th>
+        <th>
+          Category
+        </th>
+        <th>
+          Title
+        </th>
+        <th>
+          Speaker
+        </th>
+        <th>
+          URL
+        </th>
+        <th>
+          Video
+        </th>
+      </tr>
+
+    {% for talk in talks %}
+      <tr>
+        <td>
+          +1
+        </td>
+        <td>
+          {{ talk.score }}
+        </td>
+
+        <td>
+          {{ talk.level }}
+        </td>
+        <td>
+          {{ talk.category }}
+        </td>
+        <td>
+          {{ talk.title }}
+        </td>
+        <td>
+          {{ talk.author }}
+        </td>
+        <td>
+          <a href="{{ talk.url }}">
+            go to talk
+          </a>
+        </td>
+        <td>
+          {% if not talk.video %}
+            No Video
+          {% else %}
+            <a href="{{ talk.video }}">
+              go to video
+            </a>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </table>
+  </body>
+ </html>
+{% endautoescape %}

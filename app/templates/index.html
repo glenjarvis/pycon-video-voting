@@ -9,8 +9,25 @@
     <table>
     {% for event in events %}
       <tr>
-        <td>{{ event.date }}</td>
-        <td>{{ event.title }}</td>
+        <td>
+          {% if not event.locked %}
+          <a href="/vote_board/{{ event.key() }}">
+            {{ event.date }}
+          </a>
+          {% else %}
+            {{ event.date }}
+          {% endif %}
+        </td>
+        <td>
+          {% if not event.locked %}
+          <a href="/vote_board/{{ event.key() }}">
+            {{ event.title }}
+          </a>
+          {% else %}
+            {{ event.title }}
+          {% endif %}
+        </td>
+        </a>
       </tr>
     {% endfor %}
     </table>
