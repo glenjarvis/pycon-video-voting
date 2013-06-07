@@ -12,6 +12,10 @@ handlers:
 - url: /css
   static_dir: static/css
 
+- url: /admin/.*
+  script: app.controller.application
+  login: admin
+
 - url: /.*
   script: app.controller.application
 

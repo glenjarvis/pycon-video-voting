@@ -18,3 +18,16 @@ class Event(db.Model):
     url = db.StringProperty()
     body = db.TextProperty()
     locked = db.BooleanProperty(default=False, indexed=True)
+
+
+class Talk(db.Model):
+    """The Talk for voting"""
+
+    event = db.ReferenceProperty(Event)
+    level = db.StringProperty()
+    category = db.StringProperty()
+    author = db.StringProperty()
+    title = db.StringProperty()
+    url = db.LinkProperty()
+    video = db.LinkProperty()
+    score = db.IntegerProperty(default=0)
