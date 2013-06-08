@@ -34,7 +34,7 @@ class MainPage(webapp2.RequestHandler):
         """Initial page load (index.html) for main controller"""
 
         event_q = Event.all()
-        event_q.filter("date > ", datetime.date.today())
+        event_q.filter("date >= ", datetime.date.today())
 
         template_values = {
             'events': event_q,
