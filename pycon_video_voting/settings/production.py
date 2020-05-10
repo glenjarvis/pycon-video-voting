@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 
-
 import os
 import pathlib
 
@@ -22,8 +21,8 @@ from .common import (
     STATIC_ROOT, STATIC_URL, TEMPLATES, TIME_ZONE,
     USE_I18N, USE_L10N, USE_TZ, WSGI_APPLICATION)
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-DEBUG = True
+ALLOWED_HOSTS = ['pycon-video-voting.herokuapp.com']
+DEBUG = False
 STATIC_HOST = CDN_URL if not DEBUG else ''
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -31,8 +30,12 @@ SECRET_KEY = '713s_a1buvv#&ax&-tr#aclu9gol%v3n@@+z(695+o0i@p5%3j'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ['DATABASE_NAME'],
+        'USER': os.environ['DATABASE_USER'],
+        'PASSWORD': os.environ['DATABASE_PASSWORD'],
+        'HOST': 'ec2-18-215-99-63.compute-1.amazonaws.com',
+        'PORT': '',
     }
 }
 
