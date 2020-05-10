@@ -1,0 +1,16 @@
+django 3.0.6 A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+|-- asgiref >=3.2,<4.0
+|-- pytz *
+`-- sqlparse >=0.2.2
+pytest 5.4.2 pytest: simple powerful testing with Python
+|-- atomicwrites >=1.0
+|-- attrs >=17.4.0
+|-- colorama *
+|-- more-itertools >=4.0.0
+|-- packaging *
+|   |-- pyparsing >=2.0.2 
+|   `-- six * 
+|-- pluggy >=0.12,<1.0
+|-- py >=1.5.0
+`-- wcwidth *
+wheel 0.34.2 A built-package format for Python
