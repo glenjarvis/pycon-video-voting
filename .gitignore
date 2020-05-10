@@ -36,3 +36,6 @@ nosetests.xml
 
 # OSX
 .DS_Store
+
+# DB artifacts
+db.sqlite3
