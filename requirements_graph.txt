@@ -17,3 +17,4 @@ pytest 5.4.2 pytest: simple powerful testing with Python
 |-- py >=1.5.0
 `-- wcwidth *
 wheel 0.34.2 A built-package format for Python
+whitenoise 5.0.1 Radically simplified static file serving for WSGI applications
