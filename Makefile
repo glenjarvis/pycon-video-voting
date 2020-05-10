@@ -56,7 +56,7 @@ reqs: ## Update all requirements
 	poetry show --tree > requirements_graph.txt
 
 test: ## run tests quickly with the default Python
-	echo "Tests not re-added"
+	./manage.py test
 
 tag:
 	if [ -z $${VERSION+x} ]; then echo "make tag VERSION=<<version>>"; exit 1; fi
