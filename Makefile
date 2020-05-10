@@ -47,7 +47,7 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
-	flake8 github_commit_status tests
+	flake8 pycon_video_voting tests
 
 reqs: ## Update all requirements
 	poetry update
@@ -56,24 +56,17 @@ reqs: ## Update all requirements
 	poetry show --tree > requirements_graph.txt
 
 test: ## run tests quickly with the default Python
-	python tests/test_github_commit_status.py
-
-test-all: ## Run tests in all containers
-	# TODO: Please help me learn to make this more DRY
-	docker-compose build
-	docker run --rm -it glenjarvis/github_commit_status:latest /bin/bash -c 'make intra-container-test'
-	docker run --rm -it glenjarvis/github_commit_status:py-3.5.9-latest /bin/bash -c 'make intra-container-test'
-	docker run --rm -it glenjarvis/github_commit_status:py-3.6.10-latest /bin/bash -c 'make intra-container-test'
-	docker run --rm -it glenjarvis/github_commit_status:py-3.7.7-latest /bin/bash -c 'make intra-container-test'
+	echo "Tests not re-added"
 
 tag:
 	if [ -z $${VERSION+x} ]; then echo "make tag VERSION=<<version>>"; exit 1; fi
 	git tag -s v$(VERSION) -m 'Release $(VERSION)'
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source github_commit_status python tests/test_github_commit_status.py
-	coverage report -m
-	coverage html
+	echo "Tests not re-added"
+	#coverage run --source pycon_video_voting  python tests/pycon_video_voting.py
+	#coverage report -m
+	#coverage html
 
 git-hook:
 	cp githooks/pre-commit  .git/hooks/
@@ -89,8 +82,8 @@ hooks-go-away: hook-go-away
 
 docs: ## generate Sphinx HTML documentation, including API docs
 	@echo "+ $@"
-	@rm -f docs/github_commit_status.rst
-	@sphinx-apidoc -o docs/ github_commit_status
+	@rm -f docs/pycon_video_voting.rst
+	@sphinx-apidoc -o docs/ pycon_video_voting
 	@rm -f docs/modules.rst
 	@$(MAKE) -C docs clean
 	@$(MAKE) -C docs html
