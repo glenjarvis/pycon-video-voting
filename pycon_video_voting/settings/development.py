@@ -25,7 +25,7 @@ SECRET_KEY = '713s_a1buvv#&ax&-tr#aclu9gol%v3n@@+z(695+o0i@p5%3j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'pycon-video-voting.herokuapp.com']
 
 
 # Application definition
