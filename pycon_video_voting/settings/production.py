@@ -23,7 +23,6 @@ from .common import (
 
 ALLOWED_HOSTS = ['pycon-video-voting.herokuapp.com']
 DEBUG = False
-STATIC_HOST = CDN_URL if not DEBUG else ''
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '713s_a1buvv#&ax&-tr#aclu9gol%v3n@@+z(695+o0i@p5%3j'
