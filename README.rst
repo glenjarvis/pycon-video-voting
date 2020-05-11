@@ -35,6 +35,8 @@ be Open, Considerate and Respectful. This is especially true in our Open
 Spaces.
 
 
+Schedule
+^^^^^^^^
 
 7:00 Intros and Event Overview / Reviewing Code of Conduct
 
