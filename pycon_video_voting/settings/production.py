@@ -21,7 +21,7 @@ from .common import (
     STATIC_ROOT, STATIC_URL, TEMPLATES, TIME_ZONE,
     USE_I18N, USE_L10N, USE_TZ, WSGI_APPLICATION)
 
-ALLOWED_HOSTS = ['pycon-video-voting.herokuapp.com']
+ALLOWED_HOSTS = ['pycon-video-voting.herokuapp.com', 'pycon.baypiggies.net']
 DEBUG = False
 
 # SECURITY WARNING: keep the secret key used in production secret!
