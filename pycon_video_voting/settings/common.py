@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'pycon-video-voting.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'vote',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

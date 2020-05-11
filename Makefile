@@ -46,6 +46,9 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
+clean-pyc: ## Remove pyc files
+	find . -name '__pycache__' -exec rm -fr {} +
+
 lint: ## check style with flake8
 	flake8 pycon_video_voting tests
 

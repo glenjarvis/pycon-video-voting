@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% autoescape true %}
 <html>
   <head>
    <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -11,7 +10,7 @@
       <tr>
         <td>
           {% if not event.locked %}
-          <a href="/vote_board/{{ event.key() }}">
+          <a href="{% url 'vote-board' %}">
             {{ event.date }}
           </a>
           {% else %}
@@ -20,11 +19,11 @@
         </td>
         <td>
           {% if not event.locked %}
-          <a href="/vote_board/{{ event.key() }}">
+          <a href="{% url 'vote-board' %}">
             {{ event.title }}
           </a>
           {% else %}
-            {{ event.title }}
+	    {{ event.title }}
           {% endif %}
         </td>
         </a>
@@ -33,4 +32,3 @@
     </table>
   </body>
  </html>
-{% endautoescape %}
