@@ -25,7 +25,7 @@ ALLOWED_HOSTS = ['pycon-video-voting.herokuapp.com']
 DEBUG = False
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '713s_a1buvv#&ax&-tr#aclu9gol%v3n@@+z(695+o0i@p5%3j'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 DATABASES = {
     'default': {
