@@ -1,0 +1,28 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <title>{% block title %}BAyPIGgies PyCon Event{% endblock %}</title>
+  <meta name="DC.title" content="Python Conference Video Voting Board" />
+  <meta name="description" content="A MeetUp to watch PyCon Videos" />
+  <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="Python, PyCon, BAyPIGgies Tutorials, MeetUp" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+
+  {% block navigation %}
+  <ul>
+    <li><a href="{% url 'vote-board' %}">Video Voting</a></li>
+    <li><a href="{% url 'open-spaces-board' %}">Open Spaces</a></li>
+  </ul>
+  {% endblock %}
+
+  <h1>{% block page_header %}BAyPIGgies PyCon Event{% endblock %}</h1>
+
+  {% block content %}
+  Missing content. Check your content block.
+  {% endblock %}
+</body>
+</html>
