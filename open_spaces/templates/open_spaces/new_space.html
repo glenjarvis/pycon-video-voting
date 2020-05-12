@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BAyPIGgies PyCon Add Open Spaces</title>
+  <meta name="DC.title" content="Python Conference Open Spaces Board" />
+  <meta name="description" content="A MeetUp to watch PyCon Videos" />
+  <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="Python, PyCon, BAyPIGgies Tutorials, MeetUp" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <h1>Add New Open Space
+      <div class="g-plusone" data-annotation="inline" data-width="300"></div>
+
+      <!-- Place this tag after the last +1 button tag. -->
+      <script type="text/javascript">
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+      </script>
+  </h1>
+
+  <p>
+    Disclaimer: By adding an Open Space, you are acting as Host. It is your
+		responsibilty to help monitor that the BAyPIGgies <a
+			href="https://baypiggies.net/pages/code_of_conduct.html">Code
+			of Conduct</a> is being followed. Please electronically
+		remove members from the Space if the member will not comply to
+		this conduct
+  </p>
+
+  <p>
+    <form action="{% url 'new_open-space' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="I will host this Open Space">
+    </form>
+  </p>
+
+  <table>
+    <tr>
+      <td>
+	<pre>
+        {{ space.invitation}}
+	</pre>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
