@@ -1,6 +1,7 @@
+"""Models for the Video OpenSpaces"""
+
 from django.db import models
 
-"""Models for the Video OpenSpaces"""
 
 class OpenSpace(models.Model):
     """PyCon Online Open Spaces"""
@@ -13,4 +14,3 @@ class OpenSpace(models.Model):
 
     def __str__(self):
         return self.topic
-
