@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>BAyPIGgies PyCon Open Spaces Board</title>
-  <meta name="DC.title" content="Python Conference Open Spaces Board" />
-  <meta name="description" content="A MeetUp to watch PyCon Videos" />
-  <meta name="robots" content="index,follow" />
-  <meta name="keywords" content="Python, PyCon, BAyPIGgies Tutorials, MeetUp" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link type="text/css" rel="stylesheet" href="/css/main.css" />
-</head>
-<body>
-  <h1>BAyPIGgies PyCon Open Spaces Board</h1>
+{% extends "base.html" %}
+{% load static %}
 
+{% block title %}BAyPIGgies PyCon Open Spaces Board{% endblock %}
+
+{% block page_header %}BAyPIGgies PyCon Open Spaces Board{% endblock %}
+
+{% block content %}
   <ul>
     <td><A href="{% url 'new_open-space' %}">Add a new Open Space</a></td>
   </ul>
@@ -39,5 +33,4 @@
     </tr>
     {% endfor %}
   </table>
-</body>
-</html>
+{% endblock %}
