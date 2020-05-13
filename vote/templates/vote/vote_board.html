@@ -6,46 +6,43 @@
 {% block page_header %}PyCon Video Voting Board{% endblock %}
 
 {% block content %}
-  <table>
-    <tr>
-      <th>Vote up </th>
-      <th>Current Score</th>
-      <th>Title</th>
-      <th>Speaker</th>
-      <th>URL</th>
-      <th>Video</th>
-    </tr>
+  <div class="container">
 
-
-    {% for talk in talks %}
-    <tr>
-      <td>
-	<form action="{% url 'vote' talk.id %}" method="post">
-          {% csrf_token %}
-          <input type="submit" value="+1"/>
-        </form>
-      </td>
-      <td>
-        {{ talk.score }}
-      </td>
-
-      <td>
-        {{ talk.title }}
-      </td>
-      <td>
-        {{ talk.author }}
-      </td>
-      <td>
-        <a href="{{ talk.url }}">go to talk</a>
-      </td>
-      <td>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Vote Up</th>
+        <th scope="col">Current Score</th>
+        <th scope="col">Title</th>
+        <th scope="col">Speaker</th>
+        <th scope="col">Talk</th>
+        <th scope="col">Video</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for talk in talks %}
+      <tr>
+        <td>
+          <form action="{% url 'vote' talk.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">+1</button>
+          </form>
+        </td>
+        <td>{{ talk.score }}</td>
+        <td>{{ talk.title }}</td>
+        <td>{{ talk.author }}</td>
+        <td><a href="{{ talk.url }}">url</a></td>
+        <td>
         {% if not talk.video %}
           No Video
         {% else %}
-          <a href="{{ talk.video }}">go to video</a>
+          <a href="{{ talk.video }}">video</a>
         {% endif %}
-      </td>
-    </tr>
-    {% endfor %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
   </table>
+
+</div><!-- end container -->
 {% endblock %}
