@@ -1,5 +1,10 @@
 {% load static %}
-<!doctype html>
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
 <html lang="en">
 <head>
   <title>{% block title %}BAyPIGgies PyCon Event{% endblock %}</title>
@@ -11,12 +16,33 @@
   <link type="text/css" rel="stylesheet" href="/css/main.css" />
 </head>
 <body>
+  {% bootstrap_messages %}
 
   {% block navigation %}
-  <ul>
-    <li><a href="{% url 'vote-board' %}">Video Voting</a></li>
-    <li><a href="{% url 'open-spaces-board' %}">Open Spaces</a></li>
-  </ul>
+  <div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">PyConNight</a>
+    <button class="navbar-toggler"
+	    type="button"
+	    data-toggle="collapse"
+	    data-target="#navbarSupportedContent"
+	    aria-controls="navbarSupportedContent"
+	    aria-expanded="false"
+	    aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'vote-board' %}">Video Voting<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'open-spaces-board' %}">Open Spaces<span class="sr-only"></span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   {% endblock %}
 
   <h1>{% block page_header %}BAyPIGgies PyCon Event{% endblock %}</h1>
@@ -24,5 +50,6 @@
   {% block content %}
   Missing content. Check your content block.
   {% endblock %}
+  </div>
 </body>
 </html>
