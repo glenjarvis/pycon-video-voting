@@ -7,19 +7,40 @@
 
 {% block content %}
   <p>
+  <div class="alert alert-warning" role="alert">
     Disclaimer: By adding an Open Space, you are acting as Host. It is your
 		responsibilty to help monitor that the BAyPIGgies <a
 			href="https://baypiggies.net/pages/code_of_conduct.html">Code
 			of Conduct</a> is being followed. Please electronically
 		remove members from the Space if the member will not comply to
 		this conduct
+  </div>
   </p>
 
+  <div>
   <p>
     <form action="{% url 'new_open-space' %}" method="post">
       {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="I will host this Open Space">
+      <div class="form-group">
+        <label for="id_topic">Topic:</label>
+        <input type="text" class="form-control" id="id_topic" aria-describedby="topicHelp" placeholder="How to use MyPy" name="topic" required="" >
+        <small id="topicHelp" class="form-text text-muted">What will your Open Space be about?</small>
+      </div>
+      <div class="form-group">
+        <label for="id_host">Host:</label>
+	<input type="text" class="form-control" name="host" maxlength="120" required="" id="id_host" aria-describedby="hostHelp" placeholder="Jane Doe">
+	<small id="hostHelp" class="form-text text-muted">Person hosting the OpenSpace</small>
+      </div>
+      <div class="form-group">
+        <label for="id_meeting_type">Meeting type:</label>
+        <input type="text" name="meeting_type" class="form-control" maxlength="120" required="" id="id_meeting_type" placeholder="Zoom">
+      </div>
+      <div class="form-group">
+        <label for="id_invitation">Invitation:</label>
+        <textarea class="form-control" id="id_invitation" name="invitation" cols="40" rows="10" required="" aria-describedby="invitationHelp"></textarea>
+        <small id="invitationHelp" class="form-text text-muted">What the attendees need to know to join your meeting.</small>
+      </div>
     </form>
   </p>
+  </div>
 {% endblock %}
