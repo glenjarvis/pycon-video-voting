@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 
 import os
-import pathlib
 
 from .common import (
     AUTH_PASSWORD_VALIDATORS, BASE_DIR,
@@ -31,7 +30,7 @@ SECRET_KEY = '713s_a1buvv#&ax&-tr#aclu9gol%v3n@@+z(695+o0i@p5%3j'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
     }
 }
 

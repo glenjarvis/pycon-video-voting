@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-   <link rel="icon" href="favicon.ico" type="image/x-icon">
-   <link type="text/css" rel="stylesheet" href="/css/main.css" />
-  </head>
-  <body>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Legacy Event Page{% endblock %}
+
+{% block page_header %}Legacy Event Page (not used){% endblock %}
+
+{% block content %}
     <table>
     {% for event in events %}
       <tr>
@@ -30,5 +31,4 @@
       </tr>
     {% endfor %}
     </table>
-  </body>
- </html>
+{% endblock %}

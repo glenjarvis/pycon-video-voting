@@ -11,10 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import pathlib
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR = pathlib.Path(__file__).parent.parent.parent.absolute()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -32,12 +31,14 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'pycon-video-voting.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'vote',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap4',
+    'vote',
+    'open_spaces',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'pycon_video_voting.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'pycon_video_voting' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

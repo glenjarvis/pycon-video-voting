@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}BAyPIGgies PyCon Open Spaces Board{% endblock %}
+
+{% block page_header %}{{ space.meeting_type }}: {{ space.topic }}{% endblock %}
+
+{% block content %}
+  <table>
+    <tr>
+      <td>
+	<pre>
+	<samp>
+{{ space.invitation}}
+	</samp>
+	</pre>
+      </td>
+    </tr>
+  </table>
+{% endblock %}

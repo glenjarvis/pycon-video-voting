@@ -6,4 +6,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('vote.urls')),
+    path('open_spaces/', include('open_spaces.urls')),
 ]

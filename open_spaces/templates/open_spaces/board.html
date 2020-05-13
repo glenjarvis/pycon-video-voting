@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}BAyPIGgies PyCon Open Spaces Board{% endblock %}
+
+{% block page_header %}BAyPIGgies PyCon Open Spaces Board{% endblock %}
+
+{% block content %}
+  <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <form action="{% url 'new_open-space' %}" method="GET">
+	{% csrf_token %}
+        <button type="submit" class="btn btn-primary">Add a new Open Space</button>
+      </form
+    </class>
+  </div>
+      <ul><a href="{% url 'new_open-space' %}">Add a new Open Space</a></ul>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Topic</th>
+        <th scope="col">Meeting Type</th>
+        <th scope="col">Host</th>
+        <th scope="col">Invitation</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for open_space in open_spaces %}
+    <tr>
+      <td>
+        {{ open_space.topic }}
+      </td>
+      <td>
+        {{ open_space.host }}
+      </td>
+      <td>
+        {{ open_space.meeting_type }}
+      </td>
+      <td>
+        <a href="{% url 'open-spaces-space' open_space.id %}">Join Open Space</a>
+      </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+</div><!-- end container -->
+{% endblock %}
