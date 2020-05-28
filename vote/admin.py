@@ -20,4 +20,6 @@ class TalkAdmin(admin.ModelAdmin):
     "Viewed" so they no longer show on the list.
     """
     list_display = ('score', 'title', 'viewed')
+    list_display_links = ('score', 'title', )
+    ordering = ['-score']
 admin.site.register(Talk, TalkAdmin)
