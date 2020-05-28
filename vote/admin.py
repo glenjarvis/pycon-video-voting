@@ -19,7 +19,7 @@ class TalkAdmin(admin.ModelAdmin):
     Useful for entering talk data, updating scores and marking videos s
     "Viewed" so they no longer show on the list.
     """
-    list_display = ('score', 'title', 'viewed')
-    list_display_links = ('score', 'title', )
+    list_display = ('score', 'title', 'author', 'viewed', )
+    list_display_links = ('score', 'title', 'author',)
     ordering = ['-score']
 admin.site.register(Talk, TalkAdmin)
