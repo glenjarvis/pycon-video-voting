@@ -5,6 +5,14 @@ from django.shortcuts import render, redirect, reverse
 from .models import Event, Talk
 
 
+
+def voting_closed(request):
+    """Close board for another year"""
+
+    return render(request,
+                  'vote/voting_closed.html')
+
+
 def vote_board(request):
     """Display vote board for event given by event_id"""
 
@@ -13,7 +21,6 @@ def vote_board(request):
     return render(request,
                   'vote/vote_board.html',
                   {'talks': talks})
-
 
 def vote(request, talk_id):
     """Increase score for talk with given talk_id"""
