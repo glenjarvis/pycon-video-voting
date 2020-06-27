@@ -1,4 +1,4 @@
-django 3.0.6 A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+django 3.0.7 A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 |-- asgiref >=3.2,<4.0
 |-- pytz *
 `-- sqlparse >=0.2.2
@@ -6,14 +6,14 @@ django-bootstrap4 1.1.1 Bootstrap support for Django projects
 `-- beautifulsoup4 *
     |-- soupsieve >1.2 
     `-- soupsieve <2.0 (circular dependency aborted here)
-flake8 3.8.1 the modular source code checker: pep8 pyflakes and co
+flake8 3.8.3 the modular source code checker: pep8 pyflakes and co
 |-- mccabe >=0.6.0,<0.7.0
 |-- pycodestyle >=2.6.0a1,<2.7.0
 `-- pyflakes >=2.2.0,<2.3.0
 gunicorn 20.0.4 WSGI HTTP Server for UNIX
 `-- setuptools >=3.0
 psycopg2 2.8.5 psycopg2 - Python-PostgreSQL Database Adapter
-pytest 5.4.2 pytest: simple powerful testing with Python
+pytest 5.4.3 pytest: simple powerful testing with Python
 |-- atomicwrites >=1.0
 |-- attrs >=17.4.0
 |-- colorama *
@@ -25,4 +25,4 @@ pytest 5.4.2 pytest: simple powerful testing with Python
 |-- py >=1.5.0
 `-- wcwidth *
 wheel 0.34.2 A built-package format for Python
-whitenoise 5.0.1 Radically simplified static file serving for WSGI applications
+whitenoise 5.1.0 Radically simplified static file serving for WSGI applications
