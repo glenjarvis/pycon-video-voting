@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pycon_video_voting"
-version = "0.3.3"
+version = "0.3.4"
 description = ""
 authors = ["Glen Jarvis <<glen@glenjarvis.com>>"]
 license = "MIT"
