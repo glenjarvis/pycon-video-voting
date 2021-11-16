@@ -1,23 +1,29 @@
 [tool.poetry]
 name = "pycon_video_voting"
-version = "0.3.3"
-description = ""
-authors = ["Glen Jarvis <<glen@glenjarvis.com>>"]
+version = "0.4.0"
+description = "PyCon Video voting tool"
+authors = ["Glen Jarvis <glen@glenjarvis.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-wheel = "^0.34.2"
-django = "^3.0.6"
-gunicorn = "^20.0.4"
-psycopg2 = "^2.8.5"
-whitenoise = "^5.0.1"
-django-bootstrap4 = "^1.1.1"
+Django = "^3.2"
+whitenoise = "^5.3"
+django-environ = "^0.8"
+django-bootstrap4 = "^21"
+django-compressor = "^2.4"
+django-libsass = "^0.9"
+gunicorn = "^20.0"
+psycopg2 = "^2.9"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 flake8 = "^3.7.9"
+wheel = "^0.34.2"
+django-debug-toolbar = "^3.2"
+coverage = "^6"
+selenium = "^4"
+mypy = "^0.910"
 
 [build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core>=1.0.0"]
